@@ -45,4 +45,20 @@ function mergeObj2<T extends object, U extends object>(param1: T, param2: U) {
 }
 
 const myProfile = mergeObj2({name: 'Ihsan'}, {age: 18});
-console.log(myProfile.name);
+// console.log(myProfile.name);
+
+// 4. Other implementation of Generic
+// Find only class with length value
+interface Lengthy {
+    length: number
+}
+
+const x = <T extends Lengthy>(param1: T) => {
+    if (param1.length === 1) {
+        return 'You got no length'
+    }
+    return 'The length of ' + param1 + ' is ' + param1.length
+}
+
+const ihsan = x('Ihsan');
+console.log(ihsan)

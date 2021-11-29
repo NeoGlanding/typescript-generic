@@ -32,4 +32,11 @@ function mergeObj2(param1, param2) {
     return Object.assign(Object.assign({}, param1), param2);
 }
 const myProfile = mergeObj2({ name: 'Ihsan' }, { age: 18 });
-console.log(myProfile.name);
+const x = (param1) => {
+    if (param1.length === 1) {
+        return 'You got no length';
+    }
+    return 'The length of ' + param1 + ' is ' + param1.length;
+};
+const ihsan = x('Ihsan');
+console.log(ihsan);
