@@ -45,4 +45,25 @@ function describeObject(obj, key) {
     return obj[key];
 }
 const ihsan2 = describeObject({ name: 'Ihsan' }, 'name');
-console.log(ihsan2);
+// console.log(ihsan2)
+// 6. Generic Class
+class LocalStorage {
+    constructor() {
+        this.data = [];
+    }
+    addItem(item) {
+        this.data.push(item);
+    }
+    removeItem(item) {
+        this.data = this.data.filter(el => el !== item);
+    }
+    getItem() {
+        return this.data;
+    }
+}
+const numberStorage = new LocalStorage();
+numberStorage.addItem(20);
+numberStorage.addItem(10);
+console.log(numberStorage.getItem());
+numberStorage.removeItem(20);
+console.log(numberStorage.getItem());

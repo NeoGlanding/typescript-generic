@@ -69,4 +69,28 @@ function describeObject<T extends object, U extends keyof T>(obj: T, key: U) {
 }
 
 const ihsan2: string = describeObject({name: 'Ihsan'}, 'name');
-console.log(ihsan2)
+// console.log(ihsan2)
+
+// 6. Generic Class
+class LocalStorage<T extends number | string | boolean> {
+    private data: T[] = [];
+
+    addItem(item: T) {
+        this.data.push(item)
+    }
+
+    removeItem(item: T) {
+        this.data = this.data.filter(el => el !== item)
+    }
+
+    getItem() {
+        return this.data;
+    }
+}
+
+const numberStorage = new LocalStorage<number>();
+numberStorage.addItem(20);
+numberStorage.addItem(10);
+console.log(numberStorage.getItem())
+numberStorage.removeItem(20);
+console.log(numberStorage.getItem())
