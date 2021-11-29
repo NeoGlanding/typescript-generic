@@ -25,5 +25,11 @@ const arr = ['Eko', 'Kurniawan', 'Khannedy']; // => string[];
 function mergeObj(param1, param2) {
     return Object.assign(Object.assign({}, param1), param2);
 }
-const stats = mergeObj({ name: 'ihsan' }, { age: 18 });
-console.log(stats.age);
+// const stats = mergeObj({name: 'ihsan'}, {age: 18});
+// console.log(stats.age);
+// 3. Using Constraints
+function mergeObj2(param1, param2) {
+    return Object.assign(Object.assign({}, param1), param2);
+}
+const myProfile = mergeObj2({ name: 'Ihsan' }, { age: 18 });
+console.log(myProfile.name);

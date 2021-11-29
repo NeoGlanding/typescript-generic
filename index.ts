@@ -33,5 +33,16 @@ function mergeObj<T, U>(param1: T, param2: U) {
     }
 }
 
-const stats = mergeObj({name: 'ihsan'}, {age: 18});
-console.log(stats.age);
+// const stats = mergeObj({name: 'ihsan'}, {age: 18});
+// console.log(stats.age);
+
+// 3. Using Constraints
+function mergeObj2<T extends object, U extends object>(param1: T, param2: U) {
+    return {
+        ...param1,
+        ...param2
+    }
+}
+
+const myProfile = mergeObj2({name: 'Ihsan'}, {age: 18});
+console.log(myProfile.name);
