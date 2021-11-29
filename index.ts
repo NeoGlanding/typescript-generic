@@ -61,4 +61,12 @@ const x = <T extends Lengthy>(param1: T) => {
 }
 
 const ihsan = x('Ihsan');
-console.log(ihsan)
+// console.log(ihsan)
+
+// 5. keyof constraints
+function describeObject<T extends object, U extends keyof T>(obj: T, key: U) {
+    return obj[key]
+}
+
+const ihsan2: string = describeObject({name: 'Ihsan'}, 'name');
+console.log(ihsan2)

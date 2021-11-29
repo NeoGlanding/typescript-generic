@@ -39,4 +39,10 @@ const x = (param1) => {
     return 'The length of ' + param1 + ' is ' + param1.length;
 };
 const ihsan = x('Ihsan');
-console.log(ihsan);
+// console.log(ihsan)
+// 5. keyof constraints
+function describeObject(obj, key) {
+    return obj[key];
+}
+const ihsan2 = describeObject({ name: 'Ihsan' }, 'name');
+console.log(ihsan2);
